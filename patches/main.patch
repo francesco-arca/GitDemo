@@ -1,0 +1,66 @@
+From 6a649b4ffaee3be0f997c1d570009e89ae279c29 Mon Sep 17 00:00:00 2001
+From: Francesco Arca <francesco.arca@live.it>
+Date: Fri, 17 Jun 2022 11:48:14 +0200
+Subject: [PATCH 1/2] Revert "Ripristino scheda prodotto erroneamente
+ cancellata"
+
+This reverts commit e93edbd39ae35b0135f20774f021586254c16308.
+---
+ products_copy.html | 12 ------------
+ 1 file changed, 12 deletions(-)
+ delete mode 100644 products_copy.html
+
+diff --git a/products_copy.html b/products_copy.html
+deleted file mode 100644
+index 097397b..0000000
+--- a/products_copy.html
++++ /dev/null
+@@ -1,12 +0,0 @@
+-<!DOCTYPE html>
+-<html lang="en">
+-<head>
+-    <meta charset="UTF-8">
+-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+-    <title>Document</title>
+-</head>
+-<body>
+-    <p>Esempio di modifica</p>
+-</body>
+-</html>
+\ No newline at end of file
+-- 
+2.35.1.windows.2
+
+
+From 5ec9602d3bbfb75a188592e67b0b960bb4d0a144 Mon Sep 17 00:00:00 2001
+From: Francesco Arca <francesco.arca@live.it>
+Date: Fri, 17 Jun 2022 15:52:51 +0200
+Subject: [PATCH 2/2] Risolti bug nella pagina di caricamento immagini
+
+---
+ form-send.txt   | 1 +
+ form-upload.txt | 1 +
+ 2 files changed, 2 insertions(+)
+ create mode 100644 form-send.txt
+ create mode 100644 form-upload.txt
+
+diff --git a/form-send.txt b/form-send.txt
+new file mode 100644
+index 0000000..8f6ae02
+--- /dev/null
++++ b/form-send.txt
+@@ -0,0 +1 @@
++Altro Rapido bugfix
+\ No newline at end of file
+diff --git a/form-upload.txt b/form-upload.txt
+new file mode 100644
+index 0000000..19221c6
+--- /dev/null
++++ b/form-upload.txt
+@@ -0,0 +1 @@
++Rapido bugfix
+\ No newline at end of file
+-- 
+2.35.1.windows.2
+
