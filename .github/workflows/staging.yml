@@ -1,0 +1,25 @@
+name: Staging Deploy
+
+on:  
+  push:
+    branches: [ main ]
+
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Versione
+        default: "1.0"
+        required: true
+      tags:
+        description: Tags
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - run: |
+        echo "${{ github.event.inputs.version.description }}: ${{ github.event.inputs.version }}"
+        echo "Tags: ${{ github.event.inputs.tags }}"
+        
+        
+    
+    
