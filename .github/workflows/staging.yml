@@ -17,9 +17,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - run: |
-        echo "${{ github.event.inputs.version.description }}: ${{ github.event.inputs.version }}"
+        echo "Versione: ${{ github.event.inputs.version }}"
         echo "Tags: ${{ github.event.inputs.tags }}"
         
         
+    
+    
+
     
     
