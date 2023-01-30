@@ -12,13 +12,16 @@ on:
         required: true
       tags:
         description: Tags
+env:
+  GIORNO_DELLA_SETTIMANA: Lunedì
+  
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
     - run: |
         echo "Versione: ${{ github.event.inputs.version }}"
-        echo "Tags: ${{ github.event.inputs.tags }}"
+        echo "Tags: ${{ github.event.inputs.tags - env.GIORNO_DELLA_SETTIMANA }}"
         
         
     
