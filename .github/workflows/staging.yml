@@ -24,6 +24,7 @@ jobs:
         echo "Tags: ${{ github.event.inputs.tags }}"
         echo "Giorno: $GIORNO_DELLA_SETTIMANA"
         echo ${{ vars.PROVA }}
+        echo ${GITHUB_EVENT_NAME}
         
         
     
