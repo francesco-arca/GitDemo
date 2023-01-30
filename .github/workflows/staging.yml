@@ -22,7 +22,7 @@ jobs:
     - run: |
         echo "Versione: ${{ github.event.inputs.version }}"
         echo "Tags: ${{ github.event.inputs.tags }}"
-        echo "Giorno: ${{ env.GIORNO_DELLA_SETTIMANA }}"
+        echo "Giorno: $GIORNO_DELLA_SETTIMANA"
         
         
     
