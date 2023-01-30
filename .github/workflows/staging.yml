@@ -21,7 +21,8 @@ jobs:
     steps:
     - run: |
         echo "Versione: ${{ github.event.inputs.version }}"
-        echo "Tags: ${{ github.event.inputs.tags - env.GIORNO_DELLA_SETTIMANA }}"
+        echo "Tags: ${{ github.event.inputs.tags }}"
+        echo "Giorno: ${{ env.GIORNO_DELLA_SETTIMANA }}"
         
         
     
