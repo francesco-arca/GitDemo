@@ -27,4 +27,4 @@ jobs:
         run: |
           echo "Riepilogo" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY # Inserisco una linea vuota
-          echo "- Il valore random generato è: ${{ steps.hello_world_job.outputs.random }} " >> $GITHUB_STEP_SUMMARY
+          echo "- Il valore random generato è: " ${{ needs.hello_world_job.outputs.random }} >> $GITHUB_STEP_SUMMARY
