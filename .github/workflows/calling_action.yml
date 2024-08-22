@@ -24,7 +24,6 @@ jobs:
     needs: hello_world_job
     steps:
       - name: Riepilogo   
-        shell: cmd
         run: |
           echo "Riepilogo" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY # Inserisco una linea vuota
