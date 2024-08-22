@@ -6,13 +6,25 @@ jobs:
   hello_world_job:
     runs-on: windows-latest
     name: A job to say hello
+    outputs:
+      random: ${{ steps.prova.outputs.random-number }}
     steps:
       - uses: actions/checkout@v4
       - id: prova
         uses: ./.github/actions/hello-world
         with:
           who-to-greet: 'Pinco Pallino'
-      - run: echo random-number=%RANDOM%
+      - id: random
+        run: echo random-number=%RANDOM%
         shell: cmd
         env:
           RANDOM_NUMBER: ${{ steps.prova.outputs.random-number }}
+  return_random_number:
+    runs-on: windows-latest
+    needs: hello_world_job
+    steps:
+      - name: Riepilogo        
+        run: |
+          echo "Riepilogo" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY # Inserisco una linea vuota
+          echo "- Il valore random generato è: ${{ steps.hello_world_job.outputs.random }} " >> $GITHUB_STEP_SUMMARY
