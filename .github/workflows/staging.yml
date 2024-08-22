@@ -26,7 +26,13 @@ jobs:
         echo ${{ vars.PROVA }}
         echo ${GITHUB_EVENT_NAME}
         
-        
+    - name: Genero lista mediante Markdown
+      run: |
+        echo "Titolo dell'elenco puntato" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY # Inserisco una linea vuota
+        echo "- Primo punto dell'elenco" >> $GITHUB_STEP_SUMMARY
+        echo "- Secondo punto dell'elenco" >> $GITHUB_STEP_SUMMARY
+        echo "- Terzo punto dell'elenco?" >> $GITHUB_STEP_SUMMARY
     
     
 
