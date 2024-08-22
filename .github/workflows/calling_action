@@ -1,0 +1,18 @@
+name: Calling reusable action
+
+on: [workflow_dispatch]
+
+jobs:
+  hello_world_job:
+    runs-on: windows-latest
+    name: A job to say hello
+    steps:
+      - uses: actions/checkout@v4
+      - id: prova
+        uses: ./.github/actions/hello-world
+        with:
+          who-to-greet: 'Pinco Pallino'
+      - run: echo random-number=%RANDOM%
+        shell: cmd
+        env:
+          RANDOM_NUMBER: ${{ steps.prova.outputs.random-number }}
