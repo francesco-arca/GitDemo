@@ -20,10 +20,11 @@ jobs:
         env:
           RANDOM_NUMBER: ${{ steps.prova.outputs.random-number }}
   return_random_number:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     needs: hello_world_job
     steps:
-      - name: Riepilogo        
+      - name: Riepilogo   
+        shell: cmd
         run: |
           echo "Riepilogo" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY # Inserisco una linea vuota
