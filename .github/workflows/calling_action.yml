@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - id: prova
-        uses: francesco-arca/action-demo@main/.github/actions/hello-world
+        uses: francesco-arca/action-demo/.github/actions/hello-world@main
         with:
           who-to-greet: 'Pinco Pallino'
       - id: random
