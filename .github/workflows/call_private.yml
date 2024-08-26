@@ -1,0 +1,23 @@
+name: Calling private action
+
+on: [workflow_dispatch]
+
+jobs:
+  my_first_job:
+    runs-on: ubuntu-latest
+    outputs:
+      random: ${{ steps.prova.outputs.random-number }}
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          repository: francesco-arca/action-demo
+          token: ${{ secrets.pat-token }}
+          path: ./.github/actions/hello-world
+      - name: Run my action
+        id: prova
+        uses: ./.github/actions/hello-world
+        with:
+          who-to-greet: 'Pinco Pallino'
+      - name: Print value
+        run: echo ${{ steps.prova.outputs.random-number }}
