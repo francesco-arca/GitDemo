@@ -8,17 +8,13 @@ jobs:
     outputs:
       random: ${{ steps.prova.outputs.random-number }}
     steps:
-    - name: Checkout
-      uses: actions/checkout@v4
-      with:
-        path: main
     - name: Check out repository
       uses: actions/checkout@v4
       with:
         repository: francesco-arca/action-demo
         ref: 'main'
         token: ${{ secrets.PAT_REPO }}
-        path: ./.github/actions/hello-world/
+        path: ./.github/actions/action-demo/
     - name: Run my action
       id: prova
       uses: ./.github/actions/action-demo/hello-world
