@@ -17,7 +17,7 @@ jobs:
           path: ./.github/actions/hello-world
       - name: Run my action
         id: prova
-        uses: ./.github/actions/hello-world
+        uses: ./.github/actions/hello-world/action.yml
         with:
           who-to-greet: 'Pinco Pallino'
       - name: Print value
