@@ -11,7 +11,7 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
         with:
-          repository: francesco-arca/action-demo
+          repository: francesco-arca/action-demo@main
           token: ${{ secrets.GITHUB_TOKEN }}
           path: ./.github/actions/hello-world
       - name: Run my action
