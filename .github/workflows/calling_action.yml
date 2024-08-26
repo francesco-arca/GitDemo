@@ -10,6 +10,14 @@ jobs:
       random: ${{ steps.prova.outputs.random-number }}
     steps:
       - uses: actions/checkout@v4
+      - name: Get composite run steps repository
+        uses: actions/checkout@v4
+        with:
+          # action file is located in another repo called workflows at /workflows/actions/action.yaml
+          repository: action-demo
+          # ref: mybranch  # in case it's not master branch
+          # use deploy key instead of personal access token
+          path: .github/actions/hello-world
       - id: prova
         uses: ./.github/actions/hello-world
         with:
