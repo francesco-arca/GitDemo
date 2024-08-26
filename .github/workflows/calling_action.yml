@@ -14,8 +14,8 @@ jobs:
         uses: actions/checkout@v4
         with:
           # action file is located in another repo called workflows at /workflows/actions/action.yaml
-          repository: francesco-arca/action-demo
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          repository: francesco-arca/action-demo        
+          token: ${{ secrets.action-demo-pat }}
           # ref: mybranch  # in case it's not master branch
           # use deploy key instead of personal access token
           path: .github/actions/hello-world
