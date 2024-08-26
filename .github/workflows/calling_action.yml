@@ -11,9 +11,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - id: prova
-        uses: francesco-arca/action-demo@main
+        uses: francesco-arca/action-demo@main/.github/actions/hello-world
         with:
-          path: .github/actions/hello-world
           who-to-greet: 'Pinco Pallino'
       - id: random
         run: echo random-number=%RANDOM%
