@@ -15,6 +15,7 @@ jobs:
         with:
           # action file is located in another repo called workflows at /workflows/actions/action.yaml
           repository: francesco-arca/action-demo
+          ssh-key: ${{ secrets.WORKFLOWS_DEPLOYMENT_KEY }}
           # ref: mybranch  # in case it's not master branch
           # use deploy key instead of personal access token
           path: .github/actions/hello-world
