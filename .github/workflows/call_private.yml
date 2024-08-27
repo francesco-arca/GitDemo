@@ -11,8 +11,8 @@ jobs:
     - name: Check out repository
       uses: actions/checkout@v4
       with:
-        repository: francesco-arca/action-demo
-        ref: 'main'
+        repository: francesco-arca/action-demo        
+        token: ${{ secrets.PAT_REPO }}
         path: ./.github/actions/action-demo/
     - name: Run my action
       id: prova
