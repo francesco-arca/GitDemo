@@ -16,10 +16,7 @@ jobs:
         with:
           repository: francesco-arca/action-demo
           token: ${{ steps.app-token.outputs.token }}
-          ref: ${{ github.head_ref }}
           path: ./.github/actions/action-demo/
-          # Make sure the value of GITHUB_TOKEN will not be persisted in repo's config
-          persist-credentials: false
       - name: Run my action
         id: prova
         uses: ./.github/actions/action-demo/hello-world
