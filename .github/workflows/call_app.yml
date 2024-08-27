@@ -13,7 +13,7 @@ jobs:
           app-id: ${{ vars.APP_ID }}
           private-key: ${{ secrets.PRIVATE_KEY }}
           owner: ${{ github.repository_owner }}
-          repositories: "francesco-arca/GitDemo,francesco-arca/action-demo"
+          repositories: "GitDemo,action-demo"
       - uses: actions/checkout@v4
         with:
           repository: francesco-arca/action-demo          
