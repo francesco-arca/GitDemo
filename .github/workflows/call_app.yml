@@ -34,9 +34,9 @@ jobs:
           mkdir ${{ github.workspace }}/artifact/
           echo "Hello, GitHub!" > ${{ github.workspace }}/artifact/hello.txt
           cd ${{ github.workspace }}
-          ls al
+          ls -al
           cd ..
-          ls al
+          ls -al
           git add ${{ github.workspace }}/artifact/hello.txt
           git commit -m "generated"
           git push
