@@ -31,4 +31,6 @@ jobs:
         run: echo ${{ steps.prova.outputs.random-number }}
       - name: Prova Scrittura File
         run: |
-          echo "Hello, GitHub!" > ./hello.txt          
+          echo "Hello, GitHub!" > ./hello.txt 
+          git commit -am "Testing Commit From Action"
+          git push
