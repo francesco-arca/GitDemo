@@ -32,11 +32,9 @@ jobs:
       - name: Prova Scrittura File
         run: |
           mkdir ${{ github.workspace }}/artifact/
-          echo "Hello, GitHub!" > ${{ github.workspace }}/artifact/hello.txt    
-          git config --global init.defaultBranch main
-          git config --global user.name "Francesco Arca"
-          git config --global user.email "99740491+francesco-arca@users.noreply.github.com"                    
-          git init
-          git add ${{ github.workspace }}/artifact/hello.txt
-          git commit -am "Testing Commit From Action"          
+          echo "Hello, GitHub!" > ${{ github.workspace }}/artifact/hello.txt
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "generated"
           git push
