@@ -41,5 +41,5 @@ jobs:
           git add ${{ github.workspace }}/artifact/hello.txt
           git commit -am "Testing Commit From Action"
           git status
-          git remote add origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/francesco.arca/GitDemo.git          
+          git remote add origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/francesco-arca/GitDemo.git          
           git push origin main
