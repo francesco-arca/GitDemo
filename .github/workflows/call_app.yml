@@ -30,13 +30,10 @@ jobs:
       - name: Print value
         run: echo ${{ steps.prova.outputs.random-number }}
       - name: Prova Scrittura File
+        working-directory: ./patches
         run: |
-          ls -al
-          echo "Hello, GitHub!" > ./hello.txt 
-          git init
-          git config --global init.defaultBranch main
-          git config --global user.email "francesco.arca@live.it"
-          git config --global user.name "Francesco Arca"
-          git add ./hello.txt
-          git commit -am "Testing Commit From Action"
-          git push
+          echo "Hello, GitHub!" > ./hello.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: my-artifact
+          path: ./patches/hello.txt    
