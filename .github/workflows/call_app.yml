@@ -34,7 +34,7 @@ jobs:
           mkdir ${{ github.workspace }}/artifact/
           echo "Hello, GitHub!" > ${{ github.workspace }}/artifact/hello.txt                     
           git config --global init.defaultBranch main
-          git config --global user.email "francesco.arca@live.it"
+          git config --global user.email "99740491+francesco-arca@users.noreply.github.com"
           git config --global user.name "Francesco Arca"
           git init
           git remote add origin https://github.com/francesco-arca/GitDemo.git          
