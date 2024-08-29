@@ -1,9 +1,6 @@
 name: Call app
 
 on: [workflow_dispatch]
-
-permissions:
-  contents: none
   
 jobs:
   my_first_job:
