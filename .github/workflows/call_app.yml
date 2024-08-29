@@ -31,12 +31,13 @@ jobs:
         run: echo ${{ steps.prova.outputs.random-number }}
       - name: Prova Scrittura File
         run: |
-          mkdir artifact
-          echo "Hello, GitHub!" > artifact/hello.txt                               
+          mkdir ${{ github.workspace }}/artifact/
+          echo "Hello, GitHub!" > ${{ github.workspace }}/artifact/hello.txt    
+          git config --global init.defaultBranch main
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"                    
           git init
           git remote add origin https://github.com/francesco-arca/GitDemo.git
-          git add .
+          git add ${{ github.workspace }}/artifact/hello.txt
           git commit -am "Testing Commit From Action"          
-          git push
+          git push origin main
