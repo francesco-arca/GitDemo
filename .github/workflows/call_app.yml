@@ -43,4 +43,5 @@ jobs:
           git commit -am "Testing Commit From Action"
           git status
           git remote add origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/francesco-arca/GitDemo.git          
-          git push -u origin main
+          git pull origin master
+          git push origin main
