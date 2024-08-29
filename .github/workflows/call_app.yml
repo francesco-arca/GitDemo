@@ -36,11 +36,12 @@ jobs:
           git config --global user.name "Francesco Arca"
           git config --global user.email "99740491+francesco-arca@users.noreply.github.com"                  
           git init          
+          git remote add origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/francesco-arca/GitDemo.git
+          git pull remote main
           mkdir ${{ github.workspace }}/artifact/
           echo "Hello, GitHub!" > ${{ github.workspace }}/artifact/hello.txt          
           ls -al
           git add ${{ github.workspace }}/artifact/
           git add ${{ github.workspace }}/artifact/hello.txt
-          git commit -am "Testing Commit From Action"
-          git remote add origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/francesco-arca/GitDemo.git
+          git commit -am "Testing Commit From Action"          
           git push origin main
