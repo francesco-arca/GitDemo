@@ -33,6 +33,7 @@ jobs:
         run: |
           ls -al
           echo "Hello, GitHub!" > ./hello.txt 
+          git init
           git add ./hello.txt
           git commit -am "Testing Commit From Action"
           git push
