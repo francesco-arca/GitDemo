@@ -34,9 +34,11 @@ jobs:
           mkdir ${{ github.workspace }}/artifact/
           echo "Hello, GitHub!" > ${{ github.workspace }}/artifact/hello.txt
           cd ${{ github.workspace }}
-          ls -al
-          cd ..
-          ls -al
+          git config --global init.defaultBranch main
+          git config --global user.name "Francesco Arca"
+          git config --global user.email "99740491+francesco-arca@users.noreply.github.com"               
+          git init
+          git remote set-url origin https://francesco-arca:${{ steps.app-token.outputs.token }}@github.com/francesco.arca/GitDemo.git
           git add ${{ github.workspace }}/artifact/hello.txt
-          git commit -m "generated"
-          git push
+          git commit -am "Testing Commit From Action"
+          git push origin main
