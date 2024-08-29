@@ -3,7 +3,7 @@ name: Call app
 on: [workflow_dispatch]
 
 permissions:
-  contents: none
+  contents: read
   
 jobs:
   my_first_job:
@@ -29,3 +29,9 @@ jobs:
           who-to-greet: 'Pinco Pallino'
       - name: Print value
         run: echo ${{ steps.prova.outputs.random-number }}
+      - name: Push commit
+        run: |
+          echo "Hello, GitHub!" > hello.txt
+          git add hello.txt
+          git commit -m "Add hello.txt"
+          git push
