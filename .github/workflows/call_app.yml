@@ -29,9 +29,6 @@ jobs:
           who-to-greet: 'Pinco Pallino'
       - name: Print value
         run: echo ${{ steps.prova.outputs.random-number }}
-      - name: Push commit
+      - name: Prova Scrittura File
         run: |
-          echo "Hello, GitHub!" > hello.txt
-          git add hello.txt
-          git commit -m "Add hello.txt"
-          git push
+          echo "Hello, GitHub!" > ./hello.txt          
