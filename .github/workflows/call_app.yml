@@ -38,7 +38,7 @@ jobs:
           git config --global user.email "francesco.arca@live.it"
           git config --global user.name "Francesco Arca"
           git remote add origin https://github.com/francesco-arca/GitDemo.git
-          git push -m origin main
+          git push origin main
           git add ${{ github.workspace }}/artifact/hello.txt
           git commit -am "Testing Commit From Action"
           git push
