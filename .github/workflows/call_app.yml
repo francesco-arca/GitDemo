@@ -34,6 +34,9 @@ jobs:
           ls -al
           echo "Hello, GitHub!" > ./hello.txt 
           git init
+          git config --global init.defaultBranch main
+          git config --global user.email "francesco.arca@live.it"
+          git config --global user.name "Francesco Arca"
           git add ./hello.txt
           git commit -am "Testing Commit From Action"
           git push
