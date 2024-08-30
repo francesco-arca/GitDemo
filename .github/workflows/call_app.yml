@@ -3,7 +3,7 @@ name: Call app
 on: [workflow_dispatch]
 
 permissions:
-  contents: write
+  contents: none
   
 jobs:
   my_first_job:
