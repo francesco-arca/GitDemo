@@ -10,6 +10,8 @@ jobs:
       - uses: actions/checkout@v4
       - name: Dimostrazione Scrittura File
         run: |
+          git config --global user.name "Francesco Arca"
+          git config --global user.email "99740491+francesco-arca@users.noreply.github.com"      
           cd ${{ github.workspace }}
           mkdir ${{ github.workspace }}/token_demo/
           echo "Hello, GitHub!" > ${{ github.workspace }}/token_demo/hello.txt          
