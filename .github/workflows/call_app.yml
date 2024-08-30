@@ -36,7 +36,7 @@ jobs:
           git config --global user.name "Francesco Arca"
           git config --global user.email "99740491+francesco-arca@users.noreply.github.com"                  
           git init          
-          git remote add origin https://x-access-token:${{ secrets.PAT_REPO }}@github.com/francesco-arca/GitDemo.git
+          git remote add origin https://x-access-token:${{ steps.app-token.outputs.token }}@github.com/francesco-arca/GitDemo.git
           git pull origin main
           mkdir ${{ github.workspace }}/artifact/
           echo "Hello, GitHub!" > ${{ github.workspace }}/artifact/hello.txt          
