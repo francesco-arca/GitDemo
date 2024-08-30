@@ -1,0 +1,27 @@
+name: Permission Demo
+
+on: [workflow_dispatch]
+
+jobs:
+  permission_demo_job:
+    runs-on: ubuntu-latest
+    name: A job to say hello
+    steps:
+      - uses: actions/checkout@v4
+      - name: Dimostrazione Scrittura File
+        run: |
+          cd ${{ github.workspace }}
+          git config --global init.defaultBranch main
+          git config --global user.name "Francesco Arca"
+          git config --global user.email "99740491+francesco-arca@users.noreply.github.com"                  
+          git init          
+          git remote add origin https://x-access-token:${{ github.token }}@github.com/francesco-arca/GitDemo.git
+          git pull origin main
+          mkdir ${{ github.workspace }}/token_demo/
+          echo "Hello, GitHub!" > ${{ github.workspace }}/token_demo/hello.txt          
+          # Se volete vedere nel log il contenuto della cartella potete usare il comando della shell 
+          # ls -al
+          git add ${{ github.workspace }}/token_demo/
+          git add ${{ github.workspace }}/token_demo/hello.txt
+          git commit -am "Testing Commit From Action"          
+          git push origin main      
