@@ -17,6 +17,10 @@ jobs:
           private-key: ${{ secrets.PRIVATE_KEY }}
           owner: ${{ github.repository_owner }}
           repositories: "GitDemo,action-demo"
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          path: main
       - uses: actions/checkout@v4
         with:
           repository: francesco-arca/action-demo          
@@ -28,20 +32,9 @@ jobs:
         with:
           who-to-greet: 'Pinco Pallino'
       - name: Print value
-        run: echo ${{ steps.prova.outputs.random-number }}
-      - name: Prova Scrittura File
         run: |
+          echo ${{ steps.prova.outputs.random-number }}
           cd ${{ github.workspace }}
-          git config --global init.defaultBranch main
-          git config --global user.name "Francesco Arca"
-          git config --global user.email "99740491+francesco-arca@users.noreply.github.com"                  
-          git init          
-          git remote add origin https://x-access-token:${{ github.token }}@github.com/francesco-arca/GitDemo.git
-          git pull origin main
-          mkdir ${{ github.workspace }}/artifact/
-          echo "Hello, GitHub!" > ${{ github.workspace }}/artifact/hello.txt          
           ls -al
-          git add ${{ github.workspace }}/artifact/
-          git add ${{ github.workspace }}/artifact/hello.txt
-          git commit -am "Testing Commit From Action"          
-          git push origin main
+          cd ${{ github.workspace }}/.github/actions/
+          ls -al
