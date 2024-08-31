@@ -19,8 +19,6 @@ jobs:
           repositories: "GitDemo,action-demo"
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          path: main
       - uses: actions/checkout@v4
         with:
           repository: francesco-arca/action-demo          
