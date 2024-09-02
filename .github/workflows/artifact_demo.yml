@@ -15,16 +15,16 @@ jobs:
         run: |
           cd ${{ github.workspace }}          
           mkdir ${{ github.workspace }}/artifact/
-          echo "Artefatto di esempio" > artifact1.txt
-          echo "Un altro artefatto di esempio" > artifact2.txt
+          echo "Artefatto di esempio" > ./artifact/artifact1.txt
+          echo "Un altro artefatto di esempio" > ./artifact/artifact2.txt
       - uses: actions/upload-artifact@v4
         with:
-          name: my-artifact2
+          name: my-artifact
           path: ${{ github.workspace }}/artifact/
           retention-days: 1
       - uses: actions/download-artifact@v4
         with:
-          name: my-artifact2
+          name: my-artifact
       - name: Mostra il contenuto dell'artefatto
         run: ls -R    
 
