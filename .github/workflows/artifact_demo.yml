@@ -19,12 +19,12 @@ jobs:
           echo "Un altro artefatto di esempio" > artifact2.txt
       - uses: actions/upload-artifact@v4
         with:
-          name: my-artifact
+          name: my-artifact2
           path: ${{ github.workspace }}/artifact/
           retention-days: 1
       - uses: actions/download-artifact@v4
         with:
-          name: my-artifact
+          name: my-artifact2
       - name: Mostra il contenuto dell'artefatto
         run: ls -R    
 
