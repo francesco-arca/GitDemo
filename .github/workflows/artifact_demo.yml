@@ -25,6 +25,9 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           name: my-artifact
+          path: downloaded_artifacts
       - name: Mostra il contenuto dell'artefatto
-        run: ls -R    
+        run: |
+          cd ${{ github.workspace }}/downloaded_artifacts
+          ls -al
 
