@@ -1,0 +1,10 @@
+name: Artifact Demo
+
+on: [workflow_dispatch]
+
+jobs:
+  call-workflow-passing-data:
+    uses: ./.github/workflows/reusable_workflow.yml
+    with:
+      parametro: "Demo1"
+      envPAT: ${{ secrets.PAT_REPO }}
