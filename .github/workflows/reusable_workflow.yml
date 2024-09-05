@@ -16,4 +16,4 @@ jobs:
     steps:
     - run: |
         echo ${{ secrets.envPAT }}
-        echo ${{ inputs.config-path }}
+        echo ${{ inputs.parametro }}
