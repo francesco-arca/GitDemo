@@ -1,0 +1,19 @@
+name: Workflow riutilizzabile
+
+on:
+  workflow_call:  
+    inputs:
+      parametro:
+        required: true
+        type: string
+    secrets:
+      envPAT:
+        required: true
+        
+jobs:
+  stampa:
+    runs-on: ubuntu-latest
+    steps:
+    - run: |
+        echo ${{ secrets.envPAT }}
+        echo ${{ inputs.config-path }}
