@@ -1,4 +1,4 @@
-name: Artifact Demo
+name: Call reusable workflow
 
 on: [workflow_dispatch]
 
